@@ -1,0 +1,150 @@
+{
+  "extName": {
+    "message": "FloodChat"
+  },
+  "extDescription": {
+    "message": "Extensão para envio automatizado de mensagens em lote no Telegram Web e WhatsApp Web."
+  },
+  "appTitle": {
+    "message": "FloodChat"
+  },
+  "telegramWeb": {
+    "message": "Telegram Web"
+  },
+  "whatsappWeb": {
+    "message": "WhatsApp Web"
+  },
+  "waitingChat": {
+    "message": "Aguardando chat"
+  },
+  "unsupportedBanner": {
+    "message": "Abra uma conversa no Telegram Web ou WhatsApp Web"
+  },
+  "messagesBatch": {
+    "message": "Lote de mensagens"
+  },
+  "counterZero": {
+    "message": "0 mensagens"
+  },
+  "counterSingular": {
+    "message": "$COUNT$ mensagem",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "counterPlural": {
+    "message": "$COUNT$ mensagens",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "importTxt": {
+    "message": "Importar .txt"
+  },
+  "importTxtTitle": {
+    "message": "Importar arquivo .txt"
+  },
+  "clearTitle": {
+    "message": "Limpar mensagens"
+  },
+  "textareaPlaceholder": {
+    "message": "Cole mensagens aqui ou arraste seu arquivo .txt..."
+  },
+  "noFileLoaded": {
+    "message": "Nenhum arquivo importado"
+  },
+  "sendInterval": {
+    "message": "Intervalo de disparo"
+  },
+  "sendIntervalDesc": {
+    "message": "Pausa entre mensagens"
+  },
+  "continuousLoop": {
+    "message": "Execução contínua"
+  },
+  "continuousLoopDesc": {
+    "message": "Reiniciar lote ao atingir o final"
+  },
+  "readyToStart": {
+    "message": "Pronto para iniciar"
+  },
+  "btnSend": {
+    "message": "Enviar"
+  },
+  "btnHalt": {
+    "message": "Interromper"
+  },
+  "sendingProgress": {
+    "message": "Disparando ($PCT$%)...",
+    "placeholders": {
+      "pct": {
+        "content": "$1"
+      }
+    }
+  },
+  "sendingMessageIndex": {
+    "message": "Enviando mensagem $INDEX$ de $TOTAL$...",
+    "placeholders": {
+      "index": {
+        "content": "$1"
+      },
+      "total": {
+        "content": "$2"
+      }
+    }
+  },
+  "startingDispatch": {
+    "message": "Iniciando despacho..."
+  },
+  "sendStarted": {
+    "message": "Envio iniciado"
+  },
+  "sendInterrupted": {
+    "message": "Execução interrompida"
+  },
+  "sendCompleted": {
+    "message": "Envio concluído com sucesso!"
+  },
+  "editorCleared": {
+    "message": "Editor limpo"
+  },
+  "errorNoMessages": {
+    "message": "Nenhuma mensagem para enviar"
+  },
+  "errorTabNotResponding": {
+    "message": "Aba não respondeu. Recarregue a página do $PLATFORM$.",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorChatNotFound": {
+    "message": "Nenhum chat aberto no $PLATFORM$. Por favor, clique em uma conversa primeiro.",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "floodWaitDetected": {
+    "message": "Limite atingido no $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "pausedByError": {
+    "message": "Pausado: $MSG$",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  }
+}

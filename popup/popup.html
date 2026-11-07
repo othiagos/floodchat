@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="appTitle">FloodChat</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body class="theme-telegram">
+  <div class="app-shell">
+    <!-- Top Header -->
+    <header class="app-header">
+      <div class="brand">
+        <div id="brand-glyph" class="brand-glyph">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-5l-4 3.5V17H6a3 3 0 0 1-3-3V5zm10.5 1.5L9 11.5h3.2L11 16l4.5-5h-3.2l1.2-4.5z"/>
+          </svg>
+        </div>
+        <div class="brand-info">
+          <h1 id="brand-title" class="brand-title" data-i18n="appTitle">FloodChat</h1>
+          <span id="brand-tag" class="brand-tag" data-i18n="telegramWeb">Telegram Web</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Unsupported / Idle Tab Banner -->
+    <div id="unsupported-banner" class="notice-banner" style="display: none;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="8" x2="12" y2="12"></line>
+        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+      </svg>
+      <span data-i18n="unsupportedBanner">Open a conversation in Telegram Web or WhatsApp Web</span>
+    </div>
+
+    <!-- Main Workspace -->
+    <main class="app-body">
+      <!-- File Ingest & Editor Deck -->
+      <section class="panel-section">
+        <div class="section-topbar">
+          <div class="section-heading">
+            <span class="section-title" data-i18n="messagesBatch">Messages Batch</span>
+            <span id="lines-count-badge" class="counter-pill" data-i18n="counterZero">0 messages</span>
+          </div>
+          <div class="file-actions">
+            <input type="file" id="file-input" accept=".txt" class="visually-hidden">
+            <button type="button" id="btn-browse" class="action-link" data-i18n-title="importTxtTitle" title="Import .txt file">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+              <span data-i18n="importTxt">Import .txt</span>
+            </button>
+            <button type="button" id="btn-clear" class="action-link action-link-muted" data-i18n-title="clearTitle" title="Clear messages">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div id="drop-zone" class="editor-surface">
+          <textarea id="messages-input" spellcheck="false" data-i18n-placeholder="textareaPlaceholder" placeholder="Paste messages here or drop your .txt file..."></textarea>
+          <div class="editor-footer">
+            <span id="file-name" class="file-indicator" data-i18n="noFileLoaded">No file imported</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Parameters & Controls -->
+      <section class="panel-section">
+        <div class="controls-card">
+          <!-- Interval Setting -->
+          <div class="control-row">
+            <div class="control-meta">
+              <label for="interval-input" class="control-label" data-i18n="sendInterval">Send interval</label>
+              <span class="control-desc" data-i18n="sendIntervalDesc">Pause between messages</span>
+            </div>
+            <div class="input-stepper">
+              <input type="number" id="interval-input" min="0" max="60000" step="10" value="50">
+              <span class="stepper-suffix">ms</span>
+            </div>
+          </div>
+
+          <!-- Quick Presets -->
+          <div class="preset-segmented">
+            <button type="button" class="preset-btn" data-ms="0">0ms</button>
+            <button type="button" class="preset-btn active" data-ms="50">50ms</button>
+            <button type="button" class="preset-btn" data-ms="100">100ms</button>
+            <button type="button" class="preset-btn" data-ms="500">500ms</button>
+            <button type="button" class="preset-btn" data-ms="1000">1s</button>
+          </div>
+
+          <div class="card-divider"></div>
+
+          <!-- Loop Mode Switch -->
+          <div class="control-row">
+            <div class="control-meta">
+              <label for="loop-checkbox" class="control-label" data-i18n="continuousLoop">Continuous loop</label>
+              <span class="control-desc" data-i18n="continuousLoopDesc">Restart batch when reaching the end</span>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="loop-checkbox">
+              <span class="switch-handle"></span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Telemetry & Status Monitor -->
+      <section class="panel-section">
+        <div class="telemetry-card">
+          <div class="telemetry-header">
+            <div class="telemetry-status">
+              <span class="status-indicator-dot"></span>
+              <span id="status-text" class="status-label" data-i18n="readyToStart">Ready to start</span>
+            </div>
+            <span id="progress-count" class="telemetry-digits">0 / 0</span>
+          </div>
+          <div class="meter-bar">
+            <div id="progress-fill" class="meter-fill" style="width: 0%"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Execution Dock -->
+    <footer class="app-dock">
+      <button type="button" id="btn-start" class="btn btn-dispatch">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+        <span id="btn-start-label" data-i18n="btnSend">Send</span>
+      </button>
+      <button type="button" id="btn-stop" class="btn btn-halt" disabled>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+          <rect x="5" y="5" width="14" height="14" rx="2"></rect>
+        </svg>
+        <span data-i18n="btnHalt">Stop</span>
+      </button>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

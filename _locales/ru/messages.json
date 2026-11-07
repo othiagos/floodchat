@@ -1,0 +1,150 @@
+{
+  "extName": {
+    "message": "FloodChat"
+  },
+  "extDescription": {
+    "message": "Расширение для автоматической пакетной отправки сообщений в Telegram Web и WhatsApp Web."
+  },
+  "appTitle": {
+    "message": "FloodChat"
+  },
+  "telegramWeb": {
+    "message": "Telegram Web"
+  },
+  "whatsappWeb": {
+    "message": "WhatsApp Web"
+  },
+  "waitingChat": {
+    "message": "Ожидание чата"
+  },
+  "unsupportedBanner": {
+    "message": "Откройте беседу в Telegram Web или WhatsApp Web"
+  },
+  "messagesBatch": {
+    "message": "Пакет сообщений"
+  },
+  "counterZero": {
+    "message": "0 сообщений"
+  },
+  "counterSingular": {
+    "message": "$COUNT$ сообщение",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "counterPlural": {
+    "message": "$COUNT$ сообщений",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "importTxt": {
+    "message": "Импорт .txt"
+  },
+  "importTxtTitle": {
+    "message": "Импортировать файл .txt"
+  },
+  "clearTitle": {
+    "message": "Очистить сообщения"
+  },
+  "textareaPlaceholder": {
+    "message": "Вставьте сообщения сюда или перетащите .txt файл..."
+  },
+  "noFileLoaded": {
+    "message": "Файл не импортирован"
+  },
+  "sendInterval": {
+    "message": "Интервал отправки"
+  },
+  "sendIntervalDesc": {
+    "message": "Пауза между сообщениями"
+  },
+  "continuousLoop": {
+    "message": "Непрерывный цикл"
+  },
+  "continuousLoopDesc": {
+    "message": "Перезапускать пакет по достижении конца"
+  },
+  "readyToStart": {
+    "message": "Готов к запуску"
+  },
+  "btnSend": {
+    "message": "Отправить"
+  },
+  "btnHalt": {
+    "message": "Остановить"
+  },
+  "sendingProgress": {
+    "message": "Отправка ($PCT$%)...",
+    "placeholders": {
+      "pct": {
+        "content": "$1"
+      }
+    }
+  },
+  "sendingMessageIndex": {
+    "message": "Отправка сообщения $INDEX$ из $TOTAL$...",
+    "placeholders": {
+      "index": {
+        "content": "$1"
+      },
+      "total": {
+        "content": "$2"
+      }
+    }
+  },
+  "startingDispatch": {
+    "message": "Запуск отправки..."
+  },
+  "sendStarted": {
+    "message": "Отправка запущена"
+  },
+  "sendInterrupted": {
+    "message": "Выполнение остановлено"
+  },
+  "sendCompleted": {
+    "message": "Отправка успешно завершена!"
+  },
+  "editorCleared": {
+    "message": "Редактор очищен"
+  },
+  "errorNoMessages": {
+    "message": "Нет сообщений для отправки"
+  },
+  "errorTabNotResponding": {
+    "message": "Вкладка не отвечает. Перезагрузите страницу $PLATFORM$.",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorChatNotFound": {
+    "message": "Чат не найден в $PLATFORM$. Откройте беседу сначала.",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "floodWaitDetected": {
+    "message": "Превышен лимит в $PLATFORM$",
+    "placeholders": {
+      "platform": {
+        "content": "$1"
+      }
+    }
+  },
+  "pausedByError": {
+    "message": "Приостановлено: $MSG$",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  }
+}
